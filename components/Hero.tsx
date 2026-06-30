@@ -20,7 +20,7 @@ const slides = [
   {
     type: "image",
     src: "/images/model.jpg",
-    title: "ESSENTIALS",
+    title: "ESSENTIAL GEAR",
     subtitle: "Premium everyday wear.",
     button: "Explore",
   },
