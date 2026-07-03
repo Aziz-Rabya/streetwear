@@ -10,17 +10,19 @@ const songs = [
 const Nav = () => {
   const audioRef = useRef(null);
   const [currentSong, setCurrentSong] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   // Start music when page loads
   useEffect(() => {
     const audio = audioRef.current;
 
-    audio
-      .play()
-      .then(() => setIsPlaying(true))
+    audio.play()
+      .then(() => {
+        setIsPlaying(true);
+      })
       .catch(() => {
-        console.log("Autoplay blocked by browser.");
+        setIsPlaying(false);
+        console.log("Autoplay blocked.");
       });
   }, []);
 
@@ -30,7 +32,7 @@ const Nav = () => {
     audio.src = songs[currentSong];
 
     if (isPlaying) {
-      audio.play().catch(() => {});
+      audio.play().catch(() => { });
     }
   }, [currentSong]);
 
@@ -60,38 +62,26 @@ const Nav = () => {
   };
 
   return (
-    <div className="flex justify-between items-center p-4 bg-transparent text-white">
+    <nav className="absolute top-0 left-0 z-50 w-full text-white">
       <audio ref={audioRef} src={songs[0]} />
+      <div className="mx-auto flex max-w-7xl items-center justify-between p-4">
+        <header>PHOENIX-WEAR</header>
 
-      <header>PHOENIX-WEAR</header>
+        <div className="flex items-center gap-8">
+          <ul className="flex gap-6">
+            <li><a href="/">Home</a></li>
+            <li><a href="/products">Products</a></li>
+            <li><a href="/about">About</a></li>
+          </ul>
 
-      <nav className="flex items-center space-x-4">
-        <ul className="flex space-x-4">
-          <li><a href="/">Home</a></li>
-          <li><a href="/products">Products</a></li>
-          <li><a href="/about">About</a></li>
-        </ul>
-
-        <ul className="flex space-x-4">
-          <i className="bx bx-cart-alt" />
-          <i className="bx bx-user" />
-
-          {!isPlaying ? (
-            <i
-              className="bx bx-volume-full"
-              onClick={playMusic}
-              style={{ cursor: "pointer" }}
-            />
-          ) : (
-            <i
-              className="bx bx-volume-mute"
-              onClick={pauseMusic}
-              style={{ cursor: "pointer" }}
-            />
-          )}
-        </ul>
-      </nav>
-    </div>
+          <ul className="flex items-center gap-4">
+            <i className="bx bx-cart-alt" />
+            <i className="bx bx-user" />
+            {isPlaying ? (<i className="bx bx-volume-full" onClick={pauseMusic} style={{ cursor: "pointer" }} />) : (<i className="bx bx-volume-mute" onClick={playMusic} style={{ cursor: "pointer" }} />)}
+          </ul>
+        </div>
+      </div>
+    </nav>
   );
 };
 

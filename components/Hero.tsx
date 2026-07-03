@@ -2,14 +2,8 @@
 
 import { useEffect, useState } from "react";
 
+
 const slides = [
-  {
-    type: "video",
-    src: "/videos/city.mp4",
-    title: "PHOENIX WEAR",
-    subtitle: "Streetwear built for the night.",
-    button: "Shop Now",
-  },
   {
     type: "video",
     src: "/videos/house.mp4",
@@ -19,7 +13,7 @@ const slides = [
   },
   {
     type: "image",
-    src: "/images/model.jpg",
+    src: "/images/wallhaven-r2k8wq_1920x1080.png",
     title: "ESSENTIAL GEARS",
     subtitle: "Premium everyday wear.",
     button: "Explore",
@@ -43,11 +37,11 @@ export default function Hero() {
   }, [currentSlide]);
 
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section className="relative h-screen w-full bg-cover bg-center overflow-hidden">
       {slides.map((slide, index) => (
         <div
           key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
+          className={`absolute inset-0 transition-opacity h-full  duration-1000 ${
             index === currentSlide
               ? "opacity-100 z-10"
               : "opacity-0 z-0 pointer-events-none"
@@ -56,7 +50,8 @@ export default function Hero() {
           {slide.type === "video" ? (
             <video
               src={slide.src}
-              autoPlay={index === currentSlide}
+              autoPlay={currentSlide === index}
+              loop={currentSlide === index}
               muted
               playsInline
               preload="auto"
