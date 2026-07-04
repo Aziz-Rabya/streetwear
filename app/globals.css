@@ -15,6 +15,20 @@ body{
   font-style: normal;
 }
 
+@keyframes progress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.animate-progress {
+  width: 0%;
+  animation: progress 7s linear forwards;
+}
+
 
 @theme inline {
   --font-heading: var(--font-sans);

@@ -1,63 +1,113 @@
-import React from 'react'
-import RotatingText from './RotatingText'
-import ImageTrail from './ImageTrail'
-import Image from 'next/image'
+"use client";
+
+import React, { useState, useEffect } from "react";
+import RotatingText from "./RotatingText";
+import ImageTrail from "./ImageTrail";
+import Image from "next/image";
+
+const images = [
+  "/images/_.jpeg",
+  "/images/_ (1).jpeg",
+];
 
 const Manifesto = () => {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 7000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
+    <div className="relative w-full h-screen overflow-hidden bg-black">
+      {/* Background */}
+      <div className="absolute inset-0">
+        <ImageTrail
+          variant="6"
+          items={[
+            "/images/wallhaven-r2k8wq_1920x1080.png",
+            "/images/wallhaven-r2k8wq_1920x1080.png",
+            "/images/wallhaven-r2k8wq_1920x1080.png",
+            "/images/wallhaven-r2k8wq_1920x1080.png",
+            "/images/wallhaven-r2k8wq_1920x1080.png",
+            "/images/wallhaven-r2k8wq_1920x1080.png",
+          ]}
+          imageWidth={400}
+          imageHeight={400}
+          trailLength={5}
+          trailSpacing={20}
+          trailSpeed={0.5}
+        />
+      </div>
 
-    <div style={{ width: '1080px', height: '1080px', position: 'relative' }}>
-      <ImageTrail
-        variant="5"
-        items={[
-          '/images/wallhaven-r2k8wq_1920x1080.png',
-          '/images/wallhaven-r2k8wq_1920x1080.png',
-          '/images/wallhaven-r2k8wq_1920x1080.png',
-          '/images/wallhaven-r2k8wq_1920x1080.png',
-          '/images/wallhaven-r2k8wq_1920x1080.png',
-          '/images/wallhaven-r2k8wq_1920x1080.png'
-        ]}
-        imageWidth={400}
-        imageHeight={800}
-        trailLength={5}
-        trailSpacing={20}
-        trailSpeed={0.5}
-      />
-      <div className="flex flex-col items-left justify-left text-left py-20 px-4 bg-black text-white bg-blend-luminosity">
-        <h1 className="text-6xl font-bold mb-9 rubik-wet-paint-regular">PHOENIX-WEAR</h1>
-        <div className="flex flex-row items-left justify-left text-left mb-4 space-x-2">
-          <h2 className="text-2xl font-bold mb-4">REPRESENTING THE</h2>
-          <RotatingText
-            texts={['CULTURE', 'LIFESTYLE', 'STREETS']}
-            mainClassName="bg-transparent text-bold text-white text-2xl mx-3 rubik-wet-paint-regular"
-            staggerFrom="last"
-            initial={{ y: "100%" }}
-            animate={{ y: 0 }}
-            exit={{ y: "-120%" }}
-            staggerDuration={0.025}
-            splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
-            transition={{ type: "spring", damping: 30, stiffness: 400 }}
-            rotationInterval={3000}
-            splitBy="characters"
-            auto
-            loop
-          />
+      {/* Main Content */}
+      <div className="relative z-10 flex h-full items-center justify-between px-10 text-white">
+        {/* Left */}
+        <div className="max-w-3xl">
+          <h1 className="text-6xl font-bold mb-9 rubik-wet-paint-regular">
+            PHOENIX-WEAR
+          </h1>
+
+          <div className="flex items-center mb-6 space-x-2">
+            <h2 className="text-2xl font-bold">
+              REPRESENTING THE
+            </h2>
+
+            <RotatingText
+              texts={["CULTURE", "LIFESTYLE", "STREETS"]}
+              mainClassName="bg-transparent text-white text-2xl mx-3 rubik-wet-paint-regular"
+              staggerFrom="last"
+              initial={{ y: "100%" }}
+              animate={{ y: 0 }}
+              exit={{ y: "-120%" }}
+              staggerDuration={0.025}
+              splitLevelClassName="overflow-hidden"
+              transition={{
+                type: "spring",
+                damping: 30,
+                stiffness: 400,
+              }}
+              rotationInterval={3000}
+              splitBy="characters"
+              auto
+              loop
+            />
+          </div>
+
+          <p className="text-2xl font-light leading-relaxed">
+            We believe in the power of fashion to express individuality and
+            creativity. Our mission is to provide high-quality, sustainable
+            clothing that empowers people to make a positive impact on the
+            world.
+          </p>
         </div>
-        <p className="text-2xl font-light max-w-3xl">
-          We believe in the power of fashion to express individuality and creativity. Our mission is to provide high-quality, sustainable clothing that empowers people to make a positive impact on the world.
-        </p>
 
-        <div className='flex justify-end items-center mb-10'>
-          <Image
-            src="/images/wallhaven-r2k8wq_1920x1080.png"
-            alt="Placeholder"
-            width={400}
-            height={800}
-          />
+        {/* Right */}
+        <div className="flex-shrink-0 mx-20 mt-20">
+          <div className="relative w-[400px]">
+            <Image
+              src={images[currentImage]}
+              alt="Phoenix Wear"
+              width={400}
+              height={1000}
+              className="rounded-lg object-cover"
+            />
+
+            {/* Progress Bar */}
+            <div className="absolute bottom-0 left-0 w-full h-1 bg-white/20 rounded-b-lg overflow-hidden">
+              <div
+                key={currentImage}
+                className="h-full bg-white animate-progress"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Manifesto
+export default Manifesto;
