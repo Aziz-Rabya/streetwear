@@ -8,6 +8,8 @@ import Image from "next/image";
 const images = [
   "/images/_.jpeg",
   "/images/_ (1).jpeg",
+  "/images/canvas-city.jpeg",
+  "/images/stairs.jpeg"
 ];
 
 const Manifesto = () => {
@@ -81,18 +83,21 @@ const Manifesto = () => {
             We believe in the power of fashion to express individuality and
             creativity. Our mission is to provide high-quality, sustainable
             clothing that empowers people to make a positive impact on the
+            world.We believe in the power of fashion to express individuality and
+            creativity. Our mission is to provide high-quality, sustainable
+            clothing that empowers people to make a positive impact on the
             world.
           </p>
         </div>
 
         {/* Right */}
         <div className="flex-shrink-0 mx-20 mt-20">
-          <div className="relative w-[400px]">
+          <div className="relative w-[400px] h-[600px] rounded-lg overflow-hidden">
             <Image
               src={images[currentImage]}
               alt="Phoenix Wear"
               width={400}
-              height={1000}
+              height={600}
               className="rounded-lg object-cover"
             />
 

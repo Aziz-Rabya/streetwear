@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 const slides = [
   {
     type: "video",
-    src: "/videos/house.mp4",
+    src: "/videos/roof.mp4",
     title: "SUMMER DROP",
     subtitle: "Minimal. Clean. Timeless.",
     button: "Discover",
