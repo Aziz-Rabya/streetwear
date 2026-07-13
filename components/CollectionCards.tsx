@@ -24,7 +24,7 @@ const CollectionCard = ({ name, alt, text, image, button, className = "" }) => {
         <p className="text-2xl font-bold">{name}</p>
         <p>{text}</p>
 
-        <Button variant="secondary" size="lg" className="mt-4 bg-transparent border-white text-black font-bold hover:bg-white hover:text-black">
+        <Button variant="secondary" size="lg" className="mt-4 bg-transparent backdrop-blur border-white text-black font-bold hover:bg-white hover:text-black">
           {button}
         </Button>
       </div>

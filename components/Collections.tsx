@@ -11,30 +11,30 @@ const CollectionsList = [
   },
   {
     name: "PANTS",
-    alt: "hoodies",
-    text: "explore our latest hoodies collections",
+    alt: "pants",
+    text: "explore our latest pants collections",
     image: "/images/collection2.jpeg",
     button: "explore now"
   },
   {
-    name: "T-SHIRTS",
-    alt: "hoodies",
-    text: "explore our latest hoodies collections",
-    image: "/images/collection3.jpeg",
+    name: "SNEAKERS",
+    alt: "sneakers",
+    text: "explore our latest sneakers collections",
+    image: "/images/collection6.jpeg",
     button: "Buy Now"
   },
   {
     name: "SHORTS",
-    alt: "hoodies",
-    text: "explore our latest hoodies collections",
-    image: "/images/collections4.jpeg",
+    alt: "shorts",
+    text: "explore our latest shorts collections",
+    image: "/images/collection4.jpeg",
     button: "Shop Now"
   },
   {
-    name: "SNEAKERS",
-    alt: "hoodies",
-    text: "explore our latest hoodies collections",
-    image: "/images/collection5.jpeg",
+    name: "T-SHIRTS",
+    alt: "t-shirts",
+    text: "explore our latest t-shirts collections",
+    image: "/images/collection3.jpeg",
     button: "Shop Now"
   },
 ]
@@ -62,7 +62,7 @@ const Collections = () => {
             button={CollectionsList[1].button}
           />
         </div>
-        <div className="div3 h-[800px]">
+        <div className="div3 h-[550px]">
           <CollectionCards
             name={CollectionsList[2].name}
             alt={CollectionsList[2].alt}
@@ -71,7 +71,7 @@ const Collections = () => {
             button={CollectionsList[2].button}
           />
         </div>
-        <div className="div4 h-[400px]">
+        <div className="div4 h-[250px]">
           <CollectionCards
             name={CollectionsList[3].name}
             alt={CollectionsList[3].alt}
@@ -80,7 +80,7 @@ const Collections = () => {
             button={CollectionsList[3].button}
           />
         </div>
-        <div className="div5 h-[400px]">
+        <div className="div5 h-[800px]">
           <CollectionCards
             name={CollectionsList[4].name}
             alt={CollectionsList[4].alt}
