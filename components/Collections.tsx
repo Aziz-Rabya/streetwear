@@ -41,7 +41,7 @@ const CollectionsList = [
 
 const Collections = () => {
   return (
-    <div className='flex flex-col gap-10 py-20 w-full '>
+    <div className='flex flex-col gap-10 py-20 w-full mt-15'>
       <h1 className=' m-5 text-5xl font-bold phoenix text-white'>OUR COLLECTIONS</h1>
       <div className="parent gap-5 w-full">
         <div className="div1 h-[800px]">
