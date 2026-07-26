@@ -73,7 +73,7 @@ export default function Hero() {
 
           {/* Content */}
           <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center text-white">
-            <h1 className="mb-4 text-6xl font-bold">
+            <h1 className="mb-4 text-6xl font-bold unifrakturmaguntia-regular">
               {slide.title}
             </h1>
 

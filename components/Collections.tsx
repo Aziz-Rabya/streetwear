@@ -41,8 +41,8 @@ const CollectionsList = [
 
 const Collections = () => {
   return (
-    <div className='flex flex-col py-20 w-full mt-15'>
-      <h1 className=' m-5 text-5xl font-bold phoenix text-white'>OUR COLLECTIONS</h1>
+    <div className='flex flex-col py-6 md:py-10 w-full mt-0'>
+      <h1 className='m-5 text-5xl font-bold phoenix text-white'>OUR COLLECTIONS</h1>
       <div className="parent gap-5 w-full">
         <div className="div1 h-[800px]">
           <CollectionCards
@@ -53,7 +53,7 @@ const Collections = () => {
             button={CollectionsList[0].button}
           />
         </div>
-        <div className="div2 h-[800px]">
+        <div className="div2 h-[800px] ">
           <CollectionCards
             name={CollectionsList[1].name}
             alt={CollectionsList[1].alt}

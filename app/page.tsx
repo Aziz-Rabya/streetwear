@@ -4,8 +4,10 @@ import Hero from '@/components/Hero'
 import Manifesto from '@/components/Manifesto'
 import Collections from '@/components/Collections'
 import Marquee from '@/components/Marquee'
+import Mood from '@/components/Mood'
 import Cinematic from '@/components/Cinematic'
-
+import Featured from '@/components/featured'
+import Story from '@/components/Story'
 
 const page = () => {
   return (
@@ -15,7 +17,10 @@ const page = () => {
       <Manifesto />
       <Marquee />
       <Collections />
+      <Mood />
       <Cinematic />
+      <Featured />
+      <Story />
     </main>
   )
 }
