@@ -15,7 +15,7 @@ const Cinematic = () => {
         />
       </div>
       <div>
-        <h1 className="absolute phoenix top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-9xl font-bold">
+        <h1 className="absolute phoenix top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white lg:text-7xl md:text-4xl sm:3xl font-bold">
           THE WORLD IS YOURS      </h1>
       </div>
     </div>

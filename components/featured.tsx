@@ -4,9 +4,9 @@ import { Button } from './ui/button'
 const featured = () => {
     return (
         <div className="relative h-screen w-full bg-cover bg-center overflow-hidden mt-7">
-            <video
-                src="/videos/roof.mp4"
-                className="h-full w-full object-cover" autoPlay loop muted playsInline
+            <img
+                src="/videos/featured.gif"
+                className="h-full w-full object-cover"
             />
             <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center text-white">
                 <h1 className="mb-4 font-bold unifrakturmaguntia-regular sm:text-5xl md:text-6xl lg:text-9xl">

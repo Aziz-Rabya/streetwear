@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const images = [
   "/images/_.jpeg",
-  "/images/_ (1).jpeg",
+  "/images/mood7.jpeg",
   "/images/canvas-city.jpeg",
   "/images/stairs.jpeg"
 ];

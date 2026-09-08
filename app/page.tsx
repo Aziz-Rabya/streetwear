@@ -8,6 +8,7 @@ import Mood from '@/components/Mood'
 import Cinematic from '@/components/Cinematic'
 import Featured from '@/components/featured'
 import Story from '@/components/Story'
+import Soundtrack from '@/components/Soundtrack'
 
 const page = () => {
   return (
@@ -21,6 +22,7 @@ const page = () => {
       <Cinematic />
       <Featured />
       <Story />
+      <Soundtrack />
     </main>
   )
 }

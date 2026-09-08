@@ -7,7 +7,7 @@ const slides = [
   {
     type: "video",
     src: "/videos/roof.mp4",
-    title: "SUMMER DROP",
+    title: "SUMMER DROP NOW",
     subtitle: "Minimal. Clean. Timeless.",
     button: "Discover",
   },

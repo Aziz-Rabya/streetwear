@@ -9,7 +9,7 @@ const Mood = () => {
       width={1850}
       height={1000}
       />
-      <h1 className="absolute text-white text-7xl font-bold phoenix">LOUDER THAN HEAVY METAL</h1>
+      <h1 className="absolute text-white lg:text-7xl md:text-3xl sm:text-2xl font-bold phoenix">LOUDER THAN HEAVY METAL</h1>
     </div>
   )
 }
