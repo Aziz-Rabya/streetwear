@@ -5,6 +5,9 @@ const featured = () => {
     return (
         <div className="relative h-screen w-full bg-cover bg-center overflow-hidden mt-7">
             <video
+                autoPlay
+                loop
+                muted
                 src="/videos/featured.mp4"
                 className="h-full w-full object-cover"
             />
