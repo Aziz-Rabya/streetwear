@@ -68,7 +68,6 @@ const Nav = () => {
             >
               <i className="bx bx-user" />
             </button>
-
             {/* Current song */}
             <span className="hidden text-xs font-light text-gray-300 md:block">
               {currentSongData.title}

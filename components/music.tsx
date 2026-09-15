@@ -4,16 +4,20 @@ import { useEffect, useState } from "react";
 
 export const songs = [
   {
-    src: "/audios/ive-been-wrong-so-long.mp3",
-    title: "I've Been Wrong So Long",
+    src: "/audios/George_Bondo.mp3",
+    title: "George Bondo",
   },
   {
-    src: "/audios/i-know-i-need-you.mp3",
-    title: "I Know I Need You",
+    src: "/audios/NY_State_of_Mind.mp3",
+    title: "NY STATE OF MIND",
   },
   {
-    src: "/audios/never-again.mp3",
-    title: "Never Again",
+    src: "/audios/Scotties.mp3",
+    title: "SCOTTIES",
+  },
+   {
+    src: "/audios/The_World_Is_Yours.mp3",
+    title: "THE WORLD IS YOURS",
   },
 ];
 

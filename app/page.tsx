@@ -9,6 +9,8 @@ import Cinematic from '@/components/Cinematic'
 import Featured from '@/components/featured'
 import Story from '@/components/Story'
 import Soundtrack from '@/components/Soundtrack'
+import NewsLetter from '@/components/NewsLetter'
+import Footer from '@/components/Footer'
 
 const page = () => {
   return (
@@ -23,6 +25,8 @@ const page = () => {
       <Featured />
       <Story />
       <Soundtrack />
+      <NewsLetter />
+      <Footer />
     </main>
   )
 }

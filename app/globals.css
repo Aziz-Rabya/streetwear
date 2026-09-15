@@ -16,7 +16,6 @@ body{
   font-style: normal;
 }
 
-
 .parent {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
