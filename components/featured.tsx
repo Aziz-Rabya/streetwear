@@ -4,8 +4,8 @@ import { Button } from './ui/button'
 const featured = () => {
     return (
         <div className="relative h-screen w-full bg-cover bg-center overflow-hidden mt-7">
-            <img
-                src="/videos/featured.gif"
+            <video
+                src="/videos/featured.mp4"
                 className="h-full w-full object-cover"
             />
             <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center text-white">

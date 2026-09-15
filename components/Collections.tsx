@@ -20,7 +20,7 @@ const CollectionsList = [
     name: "SNEAKERS",
     alt: "sneakers",
     text: "explore our latest sneakers collections",
-    image: "/images/collection6.jpeg",
+    image: "/images/collection5.jpeg",
     button: "Buy Now"
   },
   {
