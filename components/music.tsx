@@ -29,7 +29,7 @@ let listeners: (() => void)[] = [];
 
 // Global music state
 let currentSongIndex = 0;
-let isPlaying = true;
+let isPlaying = false;
 let progress = 0;
 let duration = 0;
 let currentTime = 0;
@@ -266,24 +266,7 @@ export const useMusic = () => {
       loadSong(currentSongIndex);
     }
 
-    // Try to autoplay when the website loads
-    const startMusic = async () => {
-      try {
-        await audio.play();
 
-        isPlaying = true;
-        notifyListeners();
-      } catch (error) {
-        // Browser blocked autoplay.
-        // Music can still be started with the Play button.
-        console.log("Autoplay blocked by browser:", error);
-
-        isPlaying = false;
-        notifyListeners();
-      }
-    };
-
-    startMusic();
 
     return () => {
       listeners = listeners.filter(
