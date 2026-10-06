@@ -1,10 +1,10 @@
-import { Button } from "@/components/ui/button"
-import Nav from "@/components/Nav"
-import ProductCard from "@/components/ProductCard"
-import Pagination from "@/components/Pagination"
-import Footer from "@/components/Footer"
-import "boxicons/css/boxicons.min.css"
-import "../globals.css"
+import Nav from "@/components/Nav";
+import ProductCard from "@/components/ProductCard";
+import Pagination from "@/components/Pagination";
+import Footer from "@/components/Footer";
+import { products } from "@/constants/products";
+import "boxicons/css/boxicons.min.css";
+import Link from "next/link";
 
 const categories = [
   { name: "ALL", count: 24 },
@@ -13,80 +13,19 @@ const categories = [
   { name: "PANTS", count: 4 },
   { name: "SNEAKERS", count: 3 },
   { name: "SHORTS", count: 2 },
-]
-
-const products = [
-  {
-    id: "1",
-    src: "/images/collection1.jpeg",
-    alt: "Black oversized hoodie",
-    title: "Oversized Black Hoodie",
-    price: 89,
-  },
-  {
-    id: "2",
-    src: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab",
-    alt: "White graphic t-shirt",
-    title: "Essential Graphic Tee",
-    price: 49,
-  },
-  {
-    id: "3",
-    src: "https://images.unsplash.com/photo-1542272604-787c3835535d",
-    alt: "Black cargo pants",
-    title: "Utility Cargo Pants",
-    price: 110,
-  },
-  {
-    id: "4",
-    src: "https://images.unsplash.com/photo-1551028719-00167b16eac5",
-    alt: "Brown jacket",
-    title: "Washed Canvas Jacket",
-    price: 135,
-  },
-  {
-    id: "5",
-    src: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b",
-    alt: "Streetwear clothing",
-    title: "Urban Essentials",
-    price: 75,
-  },
-  {
-    id: "6",
-    src: "https://images.unsplash.com/photo-1576566588028-4147f3842f27",
-    alt: "Black t-shirt",
-    title: "Shadow Graphic Tee",
-    price: 49,
-  },
-  {
-    id: "7",
-    src: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b",
-    alt: "Streetwear clothing",
-    title: "Urban Essentials",
-    price: 75,
-  },
-  {
-    id: "8",
-    src: "https://images.unsplash.com/photo-1576566588028-4147f3842f27",
-    alt: "Black t-shirt",
-    title: "Shadow Graphic Tee",
-    price: 49,
-  },
-]
-
+];
 const page = () => {
   return (
     <main className="flex flex-col text-white">
       <Nav />
-
       <div className="mx-auto w-full max-w-[2000px] px-6">
         {/* Header */}
         <div className="my-20 mx-15 flex flex-col gap-6 border-b border-white/10 pb-10 md:flex-row md:items-end md:justify-between">
           <h1 className="text-7xl font-bold tracking-tight">Shop</h1>
 
           <p className="max-w-md text-lg text-white/60 md:text-right">
-            Architectural silhouettes, extreme grammage textiles, and
-            technical subversions. Manufactured in limited micro-batches.
+            Architectural silhouettes, extreme grammage textiles, and technical
+            subversions. Manufactured in limited micro-batches.
           </p>
         </div>
 
@@ -143,14 +82,15 @@ const page = () => {
       {/* Products */}
       <div className="mx-auto grid max-w-[1600px] grid-cols-2 gap-6 px-6 md:grid-cols-3 lg:grid-cols-4">
         {products.map((product) => (
-          <ProductCard
-            key={product.id}
-            id={product.id}
-            src={product.src}
-            alt={product.alt}
-            title={product.title}
-            price={product.price}
-          />
+          <Link key={product.id} href={`/product/${product.id}`}>
+            <ProductCard
+              id={product.id}
+              src={product.src}
+              alt={product.alt}
+              title={product.title}
+              price={product.price}
+            />
+          </Link>
         ))}
       </div>
 
@@ -158,7 +98,7 @@ const page = () => {
 
       <Footer />
     </main>
-  )
-}
+  );
+};
 
-export default page
+export default page;
